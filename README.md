@@ -16,7 +16,9 @@ Using a git pre-commit hook
 Create a file in your .git/hooks directory like so :
 
     #!/bin/sh
-    python ../../geocode.py ../../
+    if [ "$(git name-rev --name-only HEAD)" == "master" ]; then
+        python geocode.py
+    fi
 
 Each time you will commits, if something is new in locations.txt, it will
 be added into holiday.json.
