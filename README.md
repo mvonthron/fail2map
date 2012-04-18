@@ -1,7 +1,7 @@
-bagpack
+backpack
 =======
 
-See the [example](http://maximeh.github.com/bagpack)
+See the [example](http://maximeh.github.com/backpack)
 
 A very small website to track down all the places I have ever visited in the world.
 Just fork the project and add features if you want to !
