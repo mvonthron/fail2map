@@ -4,8 +4,12 @@
         "lng": 2.3000104
     }, 
     "4+Rue+Buot,+75013,+Paris": {
-        "lat": 48.82718029999999, 
-        "lng": 2.348962
+        "lat": 48.8272264, 
+        "lng": 2.3489694
+    }, 
+    "55+Hunsdon+Road,+London,+United+Kingdom": {
+        "lat": 51.4801489, 
+        "lng": -0.0486902
     }, 
     "Avignon,+France": {
         "lat": 43.94931700000001, 
@@ -36,8 +40,8 @@
         "lng": 129.0756416
     }, 
     "Castel+Novo,+Italy": {
-        "lat": 46.6602344, 
-        "lng": 11.1827309
+        "lat": 45.36741869999999, 
+        "lng": 10.9831269
     }, 
     "Colmar,+France": {
         "lat": 48.0793589, 
@@ -67,10 +71,6 @@
         "lat": 50.4501, 
         "lng": 30.5234
     }, 
-    "London,+UK": {
-        "lat": 51.5081289, 
-        "lng": -0.128005
-    }, 
     "Lvov,+Ukraine": {
         "lat": 49.839683, 
         "lng": 24.029717
@@ -84,8 +84,8 @@
         "lng": 73.22068
     }, 
     "Marrakesh,+Maroco": {
-        "lat": 31.631321, 
-        "lng": -8.012478
+        "lat": 31.6333333, 
+        "lng": -8.0
     }, 
     "Montreal,+Canada": {
         "lat": 45.5086699, 
@@ -140,8 +140,8 @@
         "lng": 126.9779692
     }, 
     "Sharm-el+Sheik,+Egypt": {
-        "lat": 27.9790912, 
-        "lng": 34.384954
+        "lat": 27.9158175, 
+        "lng": 34.3299505
     }, 
     "Siena,+Italy": {
         "lat": 43.3186614, 
@@ -162,6 +162,14 @@
     "Versailles,+France": {
         "lat": 48.801408, 
         "lng": 2.130122
+    }, 
+    "Via+Giovanni+da+Procida/SP101": {
+        "lat": 40.7539899, 
+        "lng": 14.0097269
+    }, 
+    "Vico+dei+Maiorani,+80138+Naples,+Campania,+Italy": {
+        "lat": 40.850465, 
+        "lng": 14.2589859
     }, 
     "Zurich,+Switzerland": {
         "lat": 47.3686498, 
