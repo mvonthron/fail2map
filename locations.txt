@@ -1,4 +1,6 @@
-London, United Kingdom
+Vico dei Maiorani, 80138 Naples, Campania, Italy
+Via Giovanni da Procida/SP101
+55 Hunsdon Road, London, United Kingdom
 12 Rue de Dantzig, 75015, Paris
 4 Rue Buot, 75013, Paris
 Munster, France
@@ -17,7 +19,7 @@ Brussels, Belgium
 Pohang, South Korea
 Seoul, South Korea
 Busan, South Korea
-Golgulsa, South Korea
+골굴사, South Korea
 Gweongju, South Korea
 Gyeongju, South Korea
 Firenze, Italy
@@ -30,7 +32,6 @@ Siena, Italy
 Montreal, Canada
 New York City, USA
 Marrakesh, Maroco
-London, UK
 Lvov, Ukraine
 Kiev, Ukraine
 Hobart, Tasmania
