@@ -41,7 +41,7 @@ function addMarker(name, val){
 window.onload = function() {
     initialize();
 
-    $.getJSON('holiday.json', function(data) {
+    $.getJSON('places_gps_log.json', function(data) {
         $.each(data, function(name, val) {
             setTimeout(function() {
                 addMarker(name, val);
