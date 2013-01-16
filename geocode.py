@@ -7,6 +7,24 @@ import sys
 from time import sleep, time
 import urllib2
 
+GMAPS_URL = "http://maps.google.com/maps/api/geocode/json?address=%s&sensor=false"
+
+def find_lat_lng(place):
+    # Don't try more than 5qps (it's the geocoding maps api limits for free)
+    gmaps_req = urllib2.urlopen(GMAPS_URL % place)
+    geo_value = json.loads(gmaps_req.read())
+    while geo_value['status'] in ['OVER_QUERY_LIMIT', 'ZERO_RESULTS']:
+        if geo_value['status'] == 'OVER_QUERY_LIMIT':
+            # Sent too many request in too short time, need to wait a little.
+            sleep(1)
+        elif geo_value['status'] == 'ZERO_RESULTS':
+            print "No results found for %s" % place
+            return {'lat': None, 'lng': None}
+        gmaps_req = urllib2.urlopen(GMAPS_URL % place)
+        geo_value = json.loads(gmaps_req.read())
+    coord = geo_value['results'][0]['geometry']['location']
+    return {'lat': coord['lat'], 'lng': coord['lng']}
+
 def main(path=""):
 
     with open("%splaces_log.txt" % path, 'r') as places_file:
@@ -21,32 +39,10 @@ def main(path=""):
             try:
                 places_gps = json.load(places_gps_file)
             except:
-                # Will happen if the file does not contain valid JSON
+                # This will happen if the file does not contain valid JSON
                 places_gps = {}
 
-    new_places = {}
-    url = "http://maps.google.com/maps/api/geocode/json?address=%s&sensor=false"
-    # Don't try more than 5qps (it's the geocoding maps api limits for free)
-    start = time()
-    for place in places:
-        if place in places_gps:
-            continue
-        gmaps_req = urllib2.urlopen(url % place)
-        geo_value = json.loads(gmaps_req.read())
-        # Parse the json we had to get only lat and lng
-        if geo_value['status'] == 'ZERO_RESULTS':
-            print "Geocoding failed for %s" % place
-            continue
-        elif geo_value['status'] == 'OVER_QUERY_LIMIT':
-            # Sent too many request in too short time, need to wait a little.
-            sleep(1 - (time() - start))
-            start = time()
-            gmaps_req = urllib2.urlopen(url % place)
-            geo_value = json.loads(gmaps_req.read())
-        lat = geo_value['results'][0]['geometry']['location']['lat']
-        lng = geo_value['results'][0]['geometry']['location']['lng']
-        new_places[place] = {'lat': lat, 'lng': lng}
-
+    new_places = {pl:find_lat_lng(pl) for pl in places if pl not in places_gps}
     # Merge places_gps with the new places and dump it.
     all_places = dict(places_gps.items() + new_places.items())
 
