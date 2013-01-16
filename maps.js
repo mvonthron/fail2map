@@ -44,7 +44,9 @@ window.onload = function() {
     $.getJSON('places_gps_log.json', function(data) {
         $.each(data, function(name, val) {
             setTimeout(function() {
-                addMarker(name, val);
+                if (val['lat'] != null){
+                    addMarker(name, val);
+                }
             }, iterator * 100);
             iterator++;
         });
