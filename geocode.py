@@ -34,7 +34,13 @@ def main(path=""):
                 # This will happen if the file does not contain valid JSON
                 places_gps = {}
 
+    # Remove gps data that doesn't exist in places anymore
+    for place_gps in places_gps.keys():
+        if place_gps not in places: del places_gps[place_gps]
+
+    # Find the gps coordinates of the new places
     new_places = {pl:find_lat_lng(pl) for pl in places if pl not in places_gps}
+
     # Merge places_gps with the new places and dump it.
     all_places = dict(places_gps.items() + new_places.items())
 
