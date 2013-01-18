@@ -14,7 +14,7 @@ Using a git pre-commit hook
 Create a post-receive script in your .git/hooks directory like so :
 
     #!/bin/sh
-    if [ "$(git name-rev --name-only HEAD)" == "master" ]; then
+    if [ "$(git name-rev --name-only HEAD)" != "master" ]; then
         python geocode.py
     fi
 
