@@ -1,186 +1,186 @@
 {
     "12+Rue+de+Dantzig,+75015,+Paris": {
-        "lat": 48.8349448,
+        "lat": 48.8349448, 
         "lng": 2.3000104
-    },
+    }, 
     "4+Rue+Buot,+75013,+Paris": {
-        "lat": 48.8272111,
+        "lat": 48.8272111, 
         "lng": 2.3489802
-    },
+    }, 
     "55+Hunsdon+Road,+London,+United+Kingdom": {
-        "lat": 51.4801779,
+        "lat": 51.4801779, 
         "lng": -0.0487574
-    },
+    }, 
     "Avignon,+France": {
-        "lat": 43.94931700000001,
+        "lat": 43.94931700000001, 
         "lng": 4.805528
-    },
+    }, 
     "Barfleur,+France": {
-        "lat": 49.670616,
+        "lat": 49.670616, 
         "lng": -1.263766
-    },
+    }, 
     "Belfort,+France": {
-        "lat": 47.63967400000001,
+        "lat": 47.63967400000001, 
         "lng": 6.863849
-    },
+    }, 
     "Biarritz,+France": {
-        "lat": 43.4831519,
+        "lat": 43.4831519, 
         "lng": -1.558626
-    },
+    }, 
     "Bologna,+Italy": {
-        "lat": 44.494887,
+        "lat": 44.494887, 
         "lng": 11.3426163
-    },
+    }, 
     "Brussels,+Belgium": {
-        "lat": 50.8503396,
+        "lat": 50.8503396, 
         "lng": 4.3517103
-    },
+    }, 
     "Busan,+South+Korea": {
-        "lat": 35.1795543,
+        "lat": 35.1795543, 
         "lng": 129.0756416
-    },
+    }, 
     "Castel+Novo,+Italy": {
-        "lat": 43.7983909,
+        "lat": 43.7983909, 
         "lng": 11.5580222
-    },
+    }, 
     "Colmar,+France": {
-        "lat": 48.0793589,
+        "lat": 48.0793589, 
         "lng": 7.358511999999999
-    },
+    }, 
     "Fira+Palace,+Barcelona,+Spain": {
-        "lat": 41.37267629999999,
+        "lat": 41.37267629999999, 
         "lng": 2.1549624
-    },
+    }, 
     "Firenze,+Italy": {
-        "lat": 43.7710332,
+        "lat": 43.7710332, 
         "lng": 11.2480006
-    },
+    }, 
     "Gwangju,+South+Korea": {
-        "lat": 35.1595454,
+        "lat": 35.1595454, 
         "lng": 126.8526012
-    },
+    }, 
     "Gyeongju,+South+Korea": {
-        "lat": 35.8561719,
+        "lat": 35.8561719, 
         "lng": 129.2247477
-    },
+    }, 
     "Hobart,+Tasmania": {
-        "lat": -42.8819032,
+        "lat": -42.8819032, 
         "lng": 147.3238148
-    },
+    }, 
     "Inaciolandia,+Brasil": {
-        "lat": -18.4701857,
+        "lat": -18.4701857, 
         "lng": -49.9870457
-    },
+    }, 
     "Kiev,+Ukraine": {
-        "lat": 50.4501,
+        "lat": 50.4501, 
         "lng": 30.5234
-    },
+    }, 
     "Lvov,+Ukraine": {
-        "lat": 49.839683,
+        "lat": 49.839683, 
         "lng": 24.029717
-    },
+    }, 
     "Lyon,+France": {
-        "lat": 45.764043,
+        "lat": 45.764043, 
         "lng": 4.835659
-    },
+    }, 
     "Maldives": {
-        "lat": 1.9772469,
+        "lat": 1.9772469, 
         "lng": 73.5361035
-    },
+    }, 
     "Marrakesh,+Maroco": {
-        "lat": 31.6333333,
+        "lat": 31.6333333, 
         "lng": -8.0
-    },
+    }, 
     "Montreal,+Canada": {
-        "lat": 45.5086699,
+        "lat": 45.5086699, 
         "lng": -73.55399249999999
-    },
+    }, 
     "Munster,+France": {
-        "lat": 48.041385,
+        "lat": 48.041385, 
         "lng": 7.137154
-    },
+    }, 
     "Nancy,+France": {
-        "lat": 48.692054,
+        "lat": 48.692054, 
         "lng": 6.184417
-    },
+    }, 
     "New+York+City,+USA": {
-        "lat": 40.7143528,
+        "lat": 40.7143528, 
         "lng": -74.00597309999999
-    },
+    }, 
     "Parme,+Italy": {
-        "lat": 44.801485,
+        "lat": 44.801485, 
         "lng": 10.3279036
-    },
+    }, 
     "Pau,+France": {
-        "lat": 43.2951,
+        "lat": 43.2951, 
         "lng": -0.370797
-    },
+    }, 
     "Pisa,+Italy": {
-        "lat": 43.7228386,
+        "lat": 43.7228386, 
         "lng": 10.4016888
-    },
+    }, 
     "Pohang,+South+Korea": {
-        "lat": 36.0190178,
+        "lat": 36.0190178, 
         "lng": 129.3434808
-    },
+    }, 
     "Punta+Cana,+Dominican+Republic": {
-        "lat": 18.5333333,
+        "lat": 18.5333333, 
         "lng": -68.3666667
-    },
+    }, 
     "Sao+Paulo,+Brasil": {
-        "lat": -23.5489433,
+        "lat": -23.5489433, 
         "lng": -46.6388182
-    },
+    }, 
     "Sao+Sebastiao,+Brasil": {
-        "lat": -23.7610175,
+        "lat": -23.7610175, 
         "lng": -45.412018
-    },
+    }, 
     "Sao+Vicente,+Brasil": {
-        "lat": -23.9629754,
+        "lat": -23.9629754, 
         "lng": -46.3918028
-    },
+    }, 
     "Seoul,+South+Korea": {
-        "lat": 37.566535,
+        "lat": 37.566535, 
         "lng": 126.9779692
-    },
+    }, 
     "Sharm-el+Sheik,+Egypt": {
-        "lat": 27.9158175,
+        "lat": 27.9158175, 
         "lng": 34.3299505
-    },
+    }, 
     "Siena,+Italy": {
-        "lat": 43.31880899999999,
+        "lat": 43.31880899999999, 
         "lng": 11.3307574
-    },
+    }, 
     "Strasbourg,+France": {
-        "lat": 48.583148,
+        "lat": 48.583148, 
         "lng": 7.747882
-    },
+    }, 
     "Valmenier,+France": {
-        "lat": 45.183414,
+        "lat": 45.183414, 
         "lng": 6.478624
-    },
+    }, 
     "Venise,+Italy": {
-        "lat": 45.4408474,
+        "lat": 45.4408474, 
         "lng": 12.3155151
-    },
+    }, 
     "Versailles,+France": {
-        "lat": 48.801408,
+        "lat": 48.801408, 
         "lng": 2.130122
-    },
+    }, 
     "Via+Giovanni+da+Procida/SP101": {
-        "lat": 45.4816476,
+        "lat": 45.4816476, 
         "lng": 9.1596232
-    },
+    }, 
     "Vico+dei+Maiorani,+80138+Naples,+Campania,+Italy": {
-        "lat": 40.8513592,
+        "lat": 40.8513592, 
         "lng": 14.2585141
-    },
+    }, 
     "Zurich,+Switzerland": {
-        "lat": 47.3686498,
+        "lat": 47.3686498, 
         "lng": 8.539182499999999
-    },
+    }, 
     "\uace8\uad74\uc0ac,+South+Korea": {
-        "lat": null,
+        "lat": null, 
         "lng": null
     }
 }
