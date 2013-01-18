@@ -1,46 +1,18 @@
-google.load("jquery", "1.7.1");
-
 var map;
-var infowindow = new google.maps.InfoWindow();
 var iterator = 0;
-
 function initialize() {
-    var latlng = new google.maps.LatLng(23.26, 0);
-    var myOptions = {
-        zoom: 3,
-        center: latlng,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
-    map = new google.maps.Map(document.getElementById("map"), myOptions);
-    google.maps.event.addListener(map, 'click', function() {
-        if (infowindow) {
-            infowindow.close();
-        }
-    });
+    map = L.map('map').setView([23.26, 0], 3);
+	L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+      maxZoom: 18
+    }).addTo(map);
 }
-
 function addMarker(name, val){
-    var pos = new google.maps.LatLng(val['lat'], val['lng']);
-    var locName = name.replace(/\+/g, ' ')
-    var marker = new google.maps.Marker({
-        map: map,
-        draggable: false,
-        position: pos,
-        title: locName,
-        animation: google.maps.Animation.DROP,
-    });
-    google.maps.event.addListener(marker, 'click', function() {
-        if (infowindow) {
-            infowindow.close();
-        }
-        infowindow = new google.maps.InfoWindow({'content': "<b>"+locName+"</b>"});
-        infowindow.open(map, this);
-    });
+    var marker = L.marker([val['lat'], val['lng']]).addTo(map);
+	marker.bindPopup('<b>'+locName+'</b>', {closePopupOnClick:true});
 }
-
 window.onload = function() {
     initialize();
-
     $.getJSON('places_gps_log.json', function(data) {
         $.each(data, function(name, val) {
             setTimeout(function() {
@@ -52,4 +24,3 @@ window.onload = function() {
         });
     });
 }
-

@@ -7,23 +7,15 @@ import sys
 from time import sleep, time
 import urllib2
 
-GMAPS_URL = "http://maps.google.com/maps/api/geocode/json?address=%s&sensor=false"
+NOMINATIM_URL = "http://open.mapquestapi.com/nominatim/v1/search?format=json&q=%s"
 
 def find_lat_lng(place):
     # Don't try more than 5qps (it's the geocoding maps api limits for free)
-    gmaps_req = urllib2.urlopen(GMAPS_URL % place)
-    geo_value = json.loads(gmaps_req.read())
-    while geo_value['status'] in ['OVER_QUERY_LIMIT', 'ZERO_RESULTS']:
-        if geo_value['status'] == 'OVER_QUERY_LIMIT':
-            # Sent too many request in too short time, need to wait a little.
-            sleep(1)
-        elif geo_value['status'] == 'ZERO_RESULTS':
-            print "No results found for %s" % place
-            return {'lat': None, 'lng': None}
-        gmaps_req = urllib2.urlopen(GMAPS_URL % place)
-        geo_value = json.loads(gmaps_req.read())
-    coord = geo_value['results'][0]['geometry']['location']
-    return {'lat': coord['lat'], 'lng': coord['lng']}
+    req = urllib2.urlopen(NOMINATIM_URL % place)
+    geo_value = json.loads(req.read())
+    if len(geo_value) > 0:
+        return {'lat': geo_value[0]['lat'], 'lng': geo_value[0]['lon']}
+    return {'lat': None, 'lng': None}
 
 def main(path=""):
 
@@ -54,5 +46,3 @@ def main(path=""):
 
 if __name__ == '__main__' :
     sys.exit(main())
-
-
