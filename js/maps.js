@@ -11,7 +11,7 @@ function initialize() {
 function addMarker(name, val){
     var locName = name.replace(/\+/g, ' ');
     var marker = L.marker([val['lat'], val['lng']]).addTo(map);
-    marker.bindPopup('<b>'+locName+'</b>');
+    marker.bindLabel('<b>'+locName+'</b>');
 }
 window.onload = function() {
     initialize();
