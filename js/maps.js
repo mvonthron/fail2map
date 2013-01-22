@@ -2,10 +2,11 @@ var map;
 var iterator = 0;
 function initialize() {
     map = L.map('map').setView([23.26, 0], 3);
-    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
-      maxZoom: 18
-    }).addTo(map);
+    L.tileLayer("http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png", {
+         maxZoom: 18,
+         subdomains: ["otile1", "otile2", "otile3", "otile4"],
+         attribution: 'Basemap tiles courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">. Map data &copy; <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA.'
+  }).addTo(map);
 }
 function addMarker(name, val){
     var locName = name.replace(/\+/g, ' ');
