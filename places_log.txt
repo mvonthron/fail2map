@@ -1,6 +1,6 @@
 Fira Palace, Barcelona, Spain
 Vico dei Maiorani, 80138 Naples, Campania, Italy
-Via Giovanni da Procida/SP101
+Via Giovanni da Procida, Chiaiolella, Procida
 55 Hunsdon Road, London, United Kingdom
 12 Rue de Dantzig, 75015, Paris
 4 Rue Buot, 75013, Paris
@@ -10,7 +10,7 @@ Nancy, France
 Biarritz, France
 Belfort, France
 Avignon, France
-Valmenier, France
+Valmeinier, France
 Lyon, France
 Colmar, France
 Pau, France
@@ -20,7 +20,6 @@ Brussels, Belgium
 Pohang, South Korea
 Seoul, South Korea
 Busan, South Korea
-골굴사, South Korea
 Gwangju, South Korea
 Gyeongju, South Korea
 Firenze, Italy
@@ -41,6 +40,6 @@ Zurich, Switzerland
 Inaciolandia, Brasil
 Sao Sebastiao, Brasil
 Sao Vicente, Brasil
-Sharm-el Sheik, Egypt
+Sharm el Sheikh, Egypt
 Maldives
 Punta Cana, Dominican Republic

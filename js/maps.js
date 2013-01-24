@@ -1,28 +1,32 @@
 var map;
-var iterator = 0;
-function initialize() {
-    map = L.map('map').setView([23.26, 0], 3);
-    L.tileLayer("http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png", {
-         maxZoom: 18,
-         subdomains: ["otile1", "otile2", "otile3", "otile4"],
-         attribution: 'Basemap tiles courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">. Map data &copy; <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA.'
-  }).addTo(map);
+
+function addLabel(feature, layer) {
+    if (feature.properties && feature.properties.name) {
+        layer.bindLabel('<b>'+feature.properties.name+'</b>')
+    }
 }
-function addMarker(name, val){
-    var locName = name.replace(/\+/g, ' ');
-    var marker = L.marker([val['lat'], val['lng']]).addTo(map);
-    marker.bindLabel('<b>'+locName+'</b>');
+
+function show(feature, layer){
+    return feature.properties.show_on_map;
+}
+
+function addFeature(feature){
+   L.geoJson(feature, {
+        onEachFeature: addLabel,
+        filter: show,
+    }).addTo(map);
 }
 window.onload = function() {
-    initialize();
-    $.getJSON('places_gps_log.json', function(data) {
-        $.each(data, function(name, val) {
-            setTimeout(function() {
-                if (val['lat'] != null){
-                    addMarker(name, val);
-                }
-            }, iterator * 100);
-            iterator++;
+    map = L.map('map').setView([23.26, 0], 3);
+    L.tileLayer("http://{s}.tiles.mapbox.com/v3/examples.map-vyofok3q/{z}/{x}/{y}.png", {
+         maxZoom: 18,
+         subdomains: ["a", "b", "c", "d"],
+         attribution: '<a href="http://mapbox.com/about/maps">Terms & Feedback</a>'
+    }).addTo(map);
+
+   $.getJSON('places.geojson', function(data) {
+        $.each(data.features, function(i, feat) {
+            addFeature(feat);
         });
     });
 }
