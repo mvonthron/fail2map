@@ -1,27 +1,33 @@
-backpack
-=======
+Fail2map
+========
 
-See the [example](http://maximeh.github.com/backpack)
+Fail2map is a map generator for [fail2ban](http://www.fail2ban.org).
+It displays banned IP on a world map. Adding IP is done automagically through a fail2ban *action*.
 
-A very small website to track down all the places I have ever visited in the world.
-Just fork the project and add features if you want to !
+Fail2map is based on [backpack](https://github.com/maximeh/backpack) by Maxime Hadjinlian.
 
-Actually, you just edit places_log.txt and the address of the new location.
-The only limitation is one address per line.
+See the [example](http://mvonthron.github.com/fail2map)
 
-Using a git pre-commit hook
----------------------------
-Create a post-receive script in your .git/hooks directory like so :
+Installing fail2map and fail2ban action
+---------------------------------------
+1. Place fail2map in the desired path of your web server
 
-    #!/bin/sh
-    if [ "$(git name-rev --name-only HEAD)" != "master" ]; then
-        python geocode.py
-    fi
+        git clone https://github.com/mvonthron/fail2map ~/public_html/fail2map 
 
-Each time you will commits, if something is new in places_log.txt, it will
-be added into places_gps_log.json.
+2. Edit `fail2map-action.conf` with the correct path for fail2map.py
+    
+        fail2map-action.conf:20	 fail2map = /home/USER/public_html/fail2map/fail2map.py
 
-Note : Don't forget to chmod +x post-receive, or it will not work.
+3. Move/copy/link `fail2map-action.conf` to fail2ban actions folder (usually `/etc/fail2ban/action.d/`)
 
-Enjoy ! :)
+Notes
+-----
+* OpenStreetMap tiles provided by [mapbox](http://mapbox.com)
+* Map API from [leaflet](http://www.leafletjs.com)
+* IP geolocation is provided by [freegeoip](http://freegeoip.net/). It's free, but not very accurate. If you want to achieve high precision, you may want a paid account at maxmind.com and change `GEOIP_API` in `fail2ban.py`.
+
+
+
+----
+2013, Manuel Vonthron <manuel.vonthron@acadis.org>
 
