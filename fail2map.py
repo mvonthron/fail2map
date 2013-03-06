@@ -5,6 +5,7 @@ import json
 import os
 import sys
 import urllib2
+import random
 
 JSON_FILE = "places.geojson"
 GEOIP_API = "http://freegeoip.net/json/%s"
@@ -34,7 +35,7 @@ def find_lat_lng(ipaddr):
     return point
 
 
-def main(ipaddr):
+def add(ipaddr):
     newPoint = find_lat_lng(ipaddr)
     
     # open GPS JSON file
@@ -68,8 +69,10 @@ def main(ipaddr):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) == 2:
-        sys.exit(main(sys.argv[1]))
+    if len(sys.argv) == 3:
+        if sys.argv[1] == "add":
+            sys.exit(add(sys.argv[2]))
     else:
-        print("%s must be called with a target IP as first and unique argument." % sys.argv[0])
+        print("%s must be called with 'add' and a target IP as first and second arguments." % sys.argv[0])
+        print("    ex: python fail2map.py add 0.0.0.0")
         sys.exit(1)
