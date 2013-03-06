@@ -6,21 +6,32 @@ import os
 import sys
 import urllib2
 
+from pprint import pprint
+
 JSON_FILE = "places_gps_log.json"
-GEOIP_API = "http://api.hostip.info/get_json.php?position=true&ip=%s"
+GEOIP_API = "http://freegeoip.net/json/%s"
 
 def find_lat_lng(ipaddr):
+    point = { "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [None, None]},
+      "properties": {"name": ipaddr, "place": "", "show_on_map": False}
+    }
     req = urllib2.urlopen(GEOIP_API % ipaddr)
     geo_value = json.loads(req.read())
-    print(geo_value)
-#    if len(geo_value) > 0:
-#        return {'lat': geo_value['lat'], 'lng': geo_value['lon']}
-#    return {'lat': None, 'lng': None}
-
+    
+    if len(geo_value) > 0:
+        point["geometry"]["coordinates"] = [
+                float(geo_value['longitude']),
+                float(geo_value['latitude'])]
+        point["properties"]["place"] = "%s, %s" % (geo_value['city'], geo_value['country_name'])
+        point["properties"]["show_on_map"] = True
+        
+    pprint(point)
+    return point
 
 
 def main(ipaddr):
-    find_lat_lng(ipaddr)	
+    find_lat_lng(ipaddr)
     
     # open GPS JSON file
     data = {}
