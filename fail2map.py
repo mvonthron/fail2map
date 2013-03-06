@@ -6,9 +6,7 @@ import os
 import sys
 import urllib2
 
-from pprint import pprint
-
-JSON_FILE = "places_gps_log.json"
+JSON_FILE = "places.geojson"
 GEOIP_API = "http://freegeoip.net/json/%s"
 
 def find_lat_lng(ipaddr):
@@ -26,25 +24,31 @@ def find_lat_lng(ipaddr):
         point["properties"]["place"] = "%s, %s" % (geo_value['city'], geo_value['country_name'])
         point["properties"]["show_on_map"] = True
         
-    pprint(point)
     return point
 
 
 def main(ipaddr):
-    find_lat_lng(ipaddr)
+    newPoint = find_lat_lng(ipaddr)
     
     # open GPS JSON file
-    data = {}
+    data = {
+            "type": "FeatureCollection",
+            "features": [],
+    }
     
-    with open(JSON_FILE, "w+") as fh:
-		data = json.loads(fh.read())
-		
-		if not ipaddr in data:
-			data[ipaddr] = {}
-	
-		json.dump(data, fh)
-	
+    try:
+        with open(JSON_FILE, "r") as fh:
+            data = json.loads(fh.read())
+    except:
+        pass
+        
+    data["features"].append(newPoint)
+        
+    with open(JSON_FILE, 'w') as fh:
+        fh.write(json.dumps(data, sort_keys=True, indent=4))
+
     return 0
+
 
 if __name__ == '__main__':
     if len(sys.argv) == 2:
