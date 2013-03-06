@@ -18,7 +18,7 @@ function addFeature(feature){
 }
 window.onload = function() {
     map = L.map('map').setView([23.26, 0], 3);
-    L.tileLayer("http://{s}.tiles.mapbox.com/v3/examples.map-vyofok3q/{z}/{x}/{y}.png", {
+    L.tileLayer("http://{s}.tiles.mapbox.com/v3/examples.map-4l7djmvo/{z}/{x}/{y}.png", {
          maxZoom: 18,
          subdomains: ["a", "b", "c", "d"],
          attribution: '<a href="http://mapbox.com/about/maps">Terms & Feedback</a>'
