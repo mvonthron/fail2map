@@ -19,6 +19,12 @@ Installing fail2map and fail2ban action
         fail2map-action.conf:20	 fail2map = /home/USER/public_html/fail2map/fail2map.py
 
 3. Move/copy/link `fail2map-action.conf` to fail2ban actions folder (usually `/etc/fail2ban/action.d/`)
+4. Add the action to your `jail.conf` or `jail.local`
+
+        # The simplest action to take: ban only
+        action_ = %(banaction)s[name=%(__name__)s, port="%(port)s", protocol="%(protocol)s", chain="%(chain)s"]
+                  fail2map-action
+
 
 Notes
 -----
