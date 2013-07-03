@@ -24,9 +24,23 @@ function addFeature(feature){
     });
 }
 
+function finishInit(){
+    heatmapLayer.setData(heatmapDataset);
+    markersLayer.addTo(map);
+    
+    overlays = {
+        "Markers": markersLayer,
+        "Heatmap": heatmapLayer
+    };
+    
+    L.control.layers(overlays, null, {collapsed: false})
+        .setPosition("bottomleft")
+        .addTo(map);
+}
+
 window.onload = function() {
     map = L.map('map').setView([23.26, 0], 3);
-    
+
     baseLayer = L.tileLayer("http://{s}.tiles.mapbox.com/v3/examples.map-4l7djmvo/{z}/{x}/{y}.png", {
          maxZoom: 18,
          subdomains: ["a", "b", "c", "d"],
@@ -36,7 +50,7 @@ window.onload = function() {
     markersLayer = L.geoJson();
     
     heatmapLayer = L.TileLayer.heatMap({
-        radius: 40,
+        radius: { value: 40, absolute: false },
         opacity: 1,
         gradient: {
             0.45: "rgb(0,0,255)",
@@ -50,17 +64,7 @@ window.onload = function() {
         $.each(data.features, function(i, feat) {
             addFeature(feat);
         });
+        finishInit();
     });
 
-    heatmapLayer.addData(heatmapDataset);
-    markersLayer.addTo(map);
-    
-    overlays = {
-        "Markers": markersLayer,
-        "Heatmap": heatmapLayer
-    };
-    
-    L.control.layers(overlays, null, {collapsed: false})
-        .setPosition("bottomleft")
-        .addTo(map);
 }

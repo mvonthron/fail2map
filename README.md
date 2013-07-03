@@ -30,7 +30,7 @@ Notes
 -----
 * OpenStreetMap tiles provided by [mapbox](http://mapbox.com)
 * Map API from [leaflet](http://www.leafletjs.com)
-* IP geolocation is provided by [freegeoip](http://freegeoip.net/). It's free, but not very accurate. If you want to achieve high precision, you may want a paid account at maxmind.com and change `GEOIP_API` in `fail2ban.py`.
+* IP geolocation is provided by [freegeoip](http://freegeoip.net/). It's free, but not very accurate. If you want to achieve high precision, you may want a paid account at maxmind.com and change `GEOIP_API` in `fail2map.py`.
 
 
 
