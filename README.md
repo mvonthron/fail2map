@@ -6,7 +6,7 @@ It displays banned IP on a world map. Adding IP is done automagically through a 
 
 Fail2map is based on [backpack](https://github.com/maximeh/backpack) by Maxime Hadjinlian.
 
-See the [example](http://mvonthron.github.com/fail2map)
+### Try the [example](http://mvonthron.github.io/fail2map).
 
 Installing fail2map and fail2ban action
 ---------------------------------------
@@ -16,7 +16,7 @@ Installing fail2map and fail2ban action
 
 2. Edit `fail2map-action.conf` with the correct path for fail2map.py
     
-        fail2map-action.conf:20	 fail2map = /home/USER/public_html/fail2map/fail2map.py
+        fail2map-action.conf:20	 fail2map = cd /home/<USER>/public_html/fail2map && python fail2map.py
 
 3. Move/copy/link `fail2map-action.conf` to fail2ban actions folder (usually `/etc/fail2ban/action.d/`)
 4. Add the action to your `jail.conf` or `jail.local`
@@ -35,5 +35,5 @@ Notes
 
 
 ----
-2013, Manuel Vonthron <manuel.vonthron@acadis.org>
+2014, Manuel Vonthron <manuel.vonthron@acadis.org>
 
