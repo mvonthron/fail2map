@@ -12,11 +12,11 @@ Installing fail2map and fail2ban action
 ---------------------------------------
 1. Place fail2map in the desired path of your web server
 
-        git clone https://github.com/mvonthron/fail2map ~/public_html/fail2map 
+        git clone https://github.com/mvonthron/fail2map ~/public_html/fail2map
 
 2. Edit `fail2map-action.conf` with the correct path for fail2map.py
-    
-        fail2map-action.conf:20	 fail2map = cd /home/<USER>/public_html/fail2map && python fail2map.py
+
+        fail2map-action.conf:20     fail2map = cd /home/<USER>/public_html/fail2map && python fail2map.py
 
 3. Move/copy/link `fail2map-action.conf` to fail2ban actions folder (usually `/etc/fail2ban/action.d/`)
 4. Add the action to your `jail.conf` or `jail.local`
@@ -30,7 +30,7 @@ Notes
 -----
 * OpenStreetMap tiles provided by [mapbox](http://mapbox.com)
 * Map API from [leaflet](http://www.leafletjs.com)
-* IP geolocation is provided by [freegeoip](http://freegeoip.net/). It's free, but not very accurate. If you want to achieve high precision, you may want a paid account at maxmind.com and change `GEOIP_API` in `fail2map.py`.
+* IP geolocation is provided by [Telize](http://http://www.telize.com/). It's free, but not very accurate. If you want to achieve high precision, you may want a paid account at maxmind.com and change `GEOIP_API` in `fail2map.py`.
 
 
 

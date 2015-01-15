@@ -17,9 +17,9 @@ function addFeature(feature){
         onEachFeature: addLabel,
         filter: show
     }));
-    
+
     heatmapDataset.push({
-        lon: feature.geometry.coordinates[0], 
+        lon: feature.geometry.coordinates[0],
         lat: feature.geometry.coordinates[1]
     });
 }
@@ -27,12 +27,12 @@ function addFeature(feature){
 function finishInit(){
     heatmapLayer.setData(heatmapDataset);
     markersLayer.addTo(map);
-    
+
     overlays = {
         "Markers": markersLayer,
         "Heatmap": heatmapLayer
     };
-    
+
     L.control.layers(overlays, null, {collapsed: false})
         .setPosition("bottomleft")
         .addTo(map);
@@ -41,14 +41,14 @@ function finishInit(){
 window.onload = function() {
     map = L.map('map').setView([23.26, 0], 3);
 
-    baseLayer = L.tileLayer("http://{s}.tiles.mapbox.com/v3/examples.map-i87786ca/{z}/{x}/{y}.png", {
+    baseLayer = L.tileLayer("http://{s}.tiles.mapbox.com/v3/examples.map-i86nkdio/{z}/{x}/{y}.png", {
          maxZoom: 18,
          subdomains: ["a", "b", "c", "d"],
          attribution: '<a href="http://mapbox.com/about/maps">Terms & Feedback</a>'
     }).addTo(map);
 
     markersLayer = L.geoJson();
-    
+
     heatmapLayer = L.TileLayer.heatMap({
         radius: { value: 40, absolute: false },
         opacity: 1,
@@ -59,7 +59,7 @@ window.onload = function() {
             0.95: "rgb(255,0,0)"
         }
     });
-    
+
     $.getJSON('places.geojson', function(data) {
         $.each(data.features, function(i, feat) {
             addFeature(feat);
