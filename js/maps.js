@@ -24,17 +24,6 @@ function addFeature(feature){
     });
 }
 
-var tileProviders = {
-    'mapbox': {url: 'http://{s}.tiles.mapbox.com/v3/examples.map-zr0njcqy/{z}/{x}/{y}.png',
-        options: {}
-    },
-    'mapbox-example': {url: 'http://{s}.tiles.mapbox.com/v3/examples.map-zr0njcqy/{z}/{x}/{y}.png'},
-    'osm': {url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'},
-    'mapquest': {url: 'http://otile{s}.mqcdn.com/tiles/1.0.0/{type}/{z}/{x}/{y}.png',
-        options: {subdomains: '1234', type: 'osm'}
-    },
-}
-
 function finishInit(){
     heatmapLayer.setData(heatmapDataset);
     markersLayer.addTo(map);
@@ -51,11 +40,12 @@ function finishInit(){
 
 window.onload = function() {
     map = L.map('map').setView([23.26, 0], 3);
-    baseLayer = L.tileLayer(tileProviders['mapquest'].url, $.extend(tileProviders['mapquest'].options, {
-         maxZoom: 18,
-         subdomains: ["a", "b", "c", "d"],
-         attribution: '<a href="http://mapbox.com/about/maps">Terms & Feedback</a>'
-    })).addTo(map);
+    // list of tile providers can be seen here: http://leaflet-extras.github.io/leaflet-providers/preview/
+    baseLayer = L.tileLayer.provider('Thunderforest.Landscape', {
+        // write options and credentials here
+        // id: 'MAPBOX_ID',
+        // accessToken: 'MAPBOX_TOKEN'
+    }).addTo(map);
 
     markersLayer = L.geoJson();
 

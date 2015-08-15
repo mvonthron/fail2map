@@ -28,12 +28,12 @@ Installing fail2map and fail2ban action
 
 Notes
 -----
-* OpenStreetMap tiles provided by [mapbox](http://mapbox.com)
+* OpenStreetMap tiles providers list by https://github.com/leaflet-extras/leaflet-providers
 * Map API from [leaflet](http://www.leafletjs.com)
 * IP geolocation is provided by [Telize](http://http://www.telize.com/). It's free, but not very accurate. If you want to achieve high precision, you may want a paid account at maxmind.com and change `GEOIP_API` in `fail2map.py`.
 
 
 
 ----
-2014, Manuel Vonthron <manuel.vonthron@acadis.org>
+2015, Manuel Vonthron <manuel.vonthron@acadis.org>
 
